@@ -1,0 +1,5 @@
+﻿  main.cpp
+c:\users\13358\dropbox\cpen 333 windows\project1\project1\main.cpp(135): warning C4930: 'CSwitch test_s1(void)': prototyped function not called (was a variable definition intended?)
+c:\users\13358\dropbox\cpen 333 windows\project1\project1\list.h(111): warning C4715: 'List<int>::Get': not all control paths return a value
+c:\users\13358\dropbox\cpen 333 windows\project1\project1\list.h(111): warning C4715: 'List<char>::Get': not all control paths return a value
+  Project1.vcxproj -> C:\Users\13358\Dropbox\CPEN 333 Windows\Project1\Debug\Project1.exe
