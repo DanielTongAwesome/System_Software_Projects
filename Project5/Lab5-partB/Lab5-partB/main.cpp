@@ -7,7 +7,7 @@ int main()
 	CMutex Move_Cursor("Move_Cursor");
 
 	CProcess Child(
-		"C:\\Users\\13358\\Dropbox\\CPEN333Windows\\Project5\\Lab5-partB\\Debug\\Child1.exe",
+		"C:\\Users\\13358\\Dropbox\\CPEN333Windows\\Project5\\Lab5-partB\\Debug\\child1.exe",
 		NORMAL_PRIORITY_CLASS,		// priority
 		PARENT_WINDOW,					// process has it's own window
 		ACTIVE						// process is active immediately
