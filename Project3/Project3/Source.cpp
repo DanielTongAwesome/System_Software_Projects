@@ -20,10 +20,16 @@ int main() {
 	car10.Resume();
 
 	car1.Accelerate(10);
+	car4.Accelerate(10);
+	car6.Accelerate(10);
+	car9.Accelerate(10);
 	Sleep(500);
 	car1.Cruise();
 	Sleep(6000);
 	car1.Stop();
+	car4.Stop();
+	car6.Stop();
+	car9.Stop();
 	car1.WaitForThread();
 	car2.WaitForThread();
 	car3.WaitForThread();
