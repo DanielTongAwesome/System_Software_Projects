@@ -1,0 +1,5 @@
+﻿  rt.cpp
+  producer1.cpp
+c:\users\13358\dropbox\cpen333windows\project6\partd-b_dpsc\producer_1\producer1.cpp(39): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating Code...
+  Producer_1.vcxproj -> C:\Users\13358\Dropbox\CPEN333Windows\Project6\PartD-b_DPSC\Debug\Producer_1.exe
