@@ -21,18 +21,23 @@ public:
 private:
 	int main(void)
 	{
-		// traffic logic
-		EntryGate->Wait();
-		Full->Signal();
+		while (1) {
+			SLEEP(300);
+			// traffic logic
+			EntryGate->Wait();
+			Full->Signal();
 
-		// rider is onboard
-		printf("Rider %d is onboard. \n", id);
-		SLEEP(15000);
+			// rider is onboard
+			printf("Rider %d is onboard. \n", id+1);
+			SLEEP(15000);
 
-		ExitGate->Wait();
-		Empty->Signal();
+			ExitGate->Wait();
+			Empty->Signal();
+
+			printf("Rider %d is getting off the car. \n", id+1);
+			SLEEP(15000);
+		}
 		
-		printf("Rider %d is getting off the car. \n", id);
 		return 0;
 	}
 };
@@ -55,10 +60,12 @@ private:
 
 			for (int current = 0; current < total_seat_number; current++) {
 				EntryGate->Signal();
+				SLEEP(300);
 			}
 
 			for (int current = 0; current < total_seat_number; current++) {
 				Full->Wait();
+				SLEEP(300);
 			}
 
 			SLEEP(1000);
@@ -67,10 +74,12 @@ private:
 
 			for (int current = 0; current < total_seat_number; current++) {
 				ExitGate->Signal();
+				SLEEP(300);
 			}
 
 			for (int current = 0; current < total_seat_number; current++) {
 				Empty->Wait();
+				SLEEP(300);
 			}
 
 			SLEEP(300);
@@ -98,14 +107,14 @@ int main()
 
 	Passenger	*thePassengers[100];		// create 100 passenger pointers
 
-the_line_up:
 	for (int i = 0; i < 100; i++) {
+		SLEEP(100);
 		thePassengers[i] = new Passenger(i);	// create 100 passengers
-		SLEEP(300);
 		thePassengers[i]->Resume();		// let them run
 	}
-	goto the_line_up;
-	 	// wait for rollercoater thread to terminate, even though it doesn't to prevent the parent thread 	// (i.e. this one from terminating and halting the program).
+	
+	// wait for rollercoater thread to terminate, even though it doesn't to prevent the parent thread
+	// (i.e. this one from terminating and halting the program).
 	
 	RollerCoaster1.WaitForThread();
 	return 0;

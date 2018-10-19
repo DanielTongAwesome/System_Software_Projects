@@ -11,9 +11,10 @@ int main() {
 	CPipe   p4("Pipe4", 1024);		// pipeline 4 connected to the pump4 
 
 
+
 	while (1) {
 		if ((p1.TestForData()) >= sizeof(pipe1data)) {		// if at least 1 integer in pipeline
-			p1.Read(&pipe1data, sizeof(pipe1data));		// read data from pipe 	
+			p1.Read(&pipe1data, sizeof(pipe1data));		// read data from pipe
 			printf("Parent Read '%d' from pump1\n", pipe1data);
 		}
 
@@ -31,6 +32,7 @@ int main() {
 			p4.Read(&pipe4data, sizeof(pipe4data));		// read data from pipe
 			printf("Parent Read '%d' from pump4\n", pipe4data);
 		}
+
 	}
 
 
